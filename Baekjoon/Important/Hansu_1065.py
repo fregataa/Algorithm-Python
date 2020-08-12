@@ -13,6 +13,8 @@ def numChecker(num: str, index: int):
 
 for i in range(1, n+1):
     numChecker(str(i), 1)
+# if I use - for i in allNum: - 
+# a bug occurs. why??? -> allNum list keep being removed !!
 
 print(len(allNum))
 

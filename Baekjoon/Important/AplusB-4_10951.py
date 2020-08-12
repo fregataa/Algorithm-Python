@@ -5,7 +5,7 @@ for line in sys.stdin:
 
 # if we use sys.stdin.readline() or input(), 
 # this for loop finish after 1 loop. 
-# readline() include '' at the last. we can check it by split()
+# readline() include '\n' at the last. we can check it by split()
 
 #   This code is also possible
 # try:
