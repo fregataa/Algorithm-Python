@@ -14,23 +14,25 @@
 # print(t)
 
 n,k = map(int, input().split())
-t=0
 q=[n]
 fin = False
+v = [1]*200000
 
-while 1:
-    l = list(set(q))
-    q = []
-    for lv in l:
-        m = [-1,1,lv]
-        for mv in m:
-            if 0<=mv+lv<140000:
-                q.append(mv+lv)
-                if mv + lv == k:
-                    fin = True
-        if fin:
-            break
-    t += 1
-    if fin:
-        break
-print(t)
+def find(q: list):
+    t=0
+    if q[0]==k:
+        return t
+    while 1:
+        l = list(set(q))
+        nl = []
+        for lv in l:
+            for mv in [-1,1,lv]:
+                if 0<=mv+lv<200000 and v[mv+lv]:
+                    if mv + lv == k:
+                        return t+1
+                    nl.append(mv+lv)
+                    v[mv+lv] = 0
+        t += 1
+        q = nl
+    
+print(find(q))
