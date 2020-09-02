@@ -14,10 +14,12 @@
 # print(a)
 
 
-visited = [[0]*4 for _ in range(6)]
-print(visited)
-visited[0][1] = -2
-print(visited)
+# visited = [[0]*4 for _ in range(6)]
+# print(visited)
+# visited[0][1] = -2
+# print(visited)
+
+print('5\n1')
 
 # for i in l:
 #     print(i.count(0))

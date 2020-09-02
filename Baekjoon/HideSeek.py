@@ -16,23 +16,24 @@
 n,k = map(int, input().split())
 q=[n]
 fin = False
-v = [1]*200000
+v = [1]*100001
 
 def find(q: list):
     t=0
-    if q[0]==k:
-        return t
     while 1:
         l = list(set(q))
         nl = []
         for lv in l:
             for mv in [-1,1,lv]:
-                if 0<=mv+lv<200000 and v[mv+lv]:
+                if 0<=mv+lv<=100001 and v[mv+lv]:
                     if mv + lv == k:
                         return t+1
                     nl.append(mv+lv)
                     v[mv+lv] = 0
         t += 1
         q = nl
-    
-print(find(q))
+
+if n==k:
+    print(0)
+else:
+    print(find(q))
