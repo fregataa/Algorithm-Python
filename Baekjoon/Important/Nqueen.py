@@ -1,3 +1,5 @@
+# THIS can be solved only by Pypy3 !!!!
+
 n = int(input())
 answer = 0
 
