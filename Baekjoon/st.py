@@ -3,6 +3,16 @@
 # allNum = [x+1 for x in range(n)]
 
 
+a = [9,2,5,6,1,4,3,7,8]
+
+b = list(map(lambda x: [x[0], x[1]], enumerate(a)))
+print(b)
+
+# for i in sorted(a)[0:3]:
+#     print(i)
+
+
+
 # for i in allNum:
 #     print(i)
 
@@ -19,7 +29,7 @@
 # visited[0][1] = -2
 # print(visited)
 
-print('5\n1')
+# print('5\n1')
 
 # for i in l:
 #     print(i.count(0))
