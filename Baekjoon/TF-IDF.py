@@ -1,8 +1,9 @@
 import math
 import re
+from collections import Counter
 
 # pattern = re.compile('\w*,*\w+')  this includes numbers
-pattern = re.compile('[a-zA-Z]+')
+# pattern = re.compile('[a-zA-Z]+')
 docs_path = ['./Docs/doc1.txt', './Docs/doc2.txt', './Docs/doc3.txt']
 
 N = len(docs_path)
@@ -10,22 +11,16 @@ df = {}
 tfs = []
 
 for doc in docs_path:
-    with open(doc, 'r', encoding='utf8') as inFile:
-        lines = inFile.readlines()
-    tf = {}
-    for line in lines:
-        words = pattern.findall(line.lower())
-        for word in words:
-            if word in tf:
-                tf[word] += 1
-            else:
-                tf[word] = 1
-    for tfv in tf:
-        if tfv in df:
-            df[tfv] += 1
-        else:
-            df[tfv] = 1
+    words = re.findall('[a-zA-Z]+', open(doc, 'r', encoding='utf8').read().lower())
+    tf = Counter(words)
     tfs.append(tf)
+
+for tfv in tfs:
+    for ts in tfv:
+        if ts not in df:
+            df[ts] = 1
+        else:
+            df[ts] += 1
 
 for idx, tf in enumerate(tfs):
     weight = []
@@ -36,3 +31,6 @@ for idx, tf in enumerate(tfs):
     for wgt in sorted(weight, key = lambda x: -x[1])[0:5]:
         print("{0}  {1:5f}".format(wgt[0], wgt[1]))
     print()
+
+
+
