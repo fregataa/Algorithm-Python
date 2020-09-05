@@ -4,9 +4,11 @@
 
 
 a = [9,2,5,6,1,4,3,7,8]
-
-b = list(map(lambda x: [x[0], x[1]], enumerate(a)))
-print(b)
+b = a[1:]
+c = [[2,3,4], [5,4,1], [8,9,1]]
+# b = list(map(lambda x: [x[0], x[1]], enumerate(a)))
+for i in range(3):
+    print(*c[i])
 
 # for i in sorted(a)[0:3]:
 #     print(i)
