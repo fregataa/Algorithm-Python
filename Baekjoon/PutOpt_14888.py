@@ -23,7 +23,6 @@ def find(cnt: int, renum: int):
                     re = math.trunc(re/nums[cnt])
             if cnt == n - 1:
                 global max, min
-                print(ops, i, renum, re)
                 if max < re:
                     max = re
                 if min > re:
