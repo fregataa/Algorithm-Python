@@ -4,7 +4,7 @@ n = 2
 
 nodes = [[0 for _ in range(m)] + [-1] for _ in range(n)] + [[-1 for _ in range(m+1)]]
 for x,y in p:
-    nodes[x-1][y-1] = -1
+    nodes[y-1][x-1] = -1
 nodes[0][0] = 1
 
 for i in range(n):
