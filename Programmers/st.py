@@ -5,10 +5,11 @@ from functools import reduce
 # b = a + [[4], [5]]
 # c = b + [[6], [7]]
 
-a = [{2,1}, {1,3}, {5,4}]
-b = {1,2}
+a = [0,1,2,3,4,5,6,7,8,9,10]
+b= a[:5]
 
-if b in a:
-    print('b in a')
-else:
-    print('npoe')
+def test(l):
+    l[0] = 1
+
+test(a)
+print(a)
