@@ -7,7 +7,6 @@ def binary(iter, n1, n2):
     p = 1 << iter
     line = [' ' for _ in range(iter)]
     for i in range(iter):
-        # print('n1 =',n1, 'n2 =',n2, 'p =',p)
         p = p >> 1
         if n1 // p < 1 and n2 // p < 1:
             continue
