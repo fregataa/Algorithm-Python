@@ -9,8 +9,6 @@ import heapq as hq
 
 # print(a)
 
-a = [2,4,1,8,9,3]
-# hq.heapify(a)
-b = hq.nlargest(1,a)
-a.remove(2)
-print(a)
+a = ["abc","abr","hhf","qsd"]
+b = sorted(a, key = lambda x: tuple([x[i] for i in range(1:)]))
+print(b)
