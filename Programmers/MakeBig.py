@@ -6,7 +6,7 @@ def solution(number, k):
         if num[i] > num[start]:
             start = i
     cnt = k-start
-    print(start, cnt)
+    # print(start, cnt)
     for i in range(start,len(num)-1):
         if cnt and num[i] < num[i+1]:
             cnt -= 1
@@ -18,7 +18,7 @@ def solution(number, k):
     return ''.join(answer)
 
 
-n = "1231234"
-k=3
+n = "10000"
+k=2
 
 print(solution(n,k))
