@@ -1,8 +1,14 @@
 from collections import Counter
 
-# a = [1,2,3,4]
-# t = sorted(Counter(map(int, input().split())).items(), reverse=True)
-# print(t)
-a= [10,10,20,17,15,5,5]
-b= Counter(map(int, a))
-print(b.items())
+import heapq as hq
+
+a = []
+b = [4,6,8,3,2,1,9]
+
+for bn in b:
+    hq.heappush(a, bn)
+
+while a:
+    print(hq.heappop(a))
+
+print(a)
